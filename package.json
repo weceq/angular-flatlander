@@ -1,0 +1,18 @@
+{
+  "name": "angular-flatlander",
+  "version": "0.1.0",
+  "description": "Flatlander - angular.js tutorial",
+  "main": "js/flatlander.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "angular"
+  ],
+  "author": "Dawid Grzegorz Węckowski",
+  "license": "GPL",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-bowercopy": "^1.2.3"
+  }
+}

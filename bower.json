@@ -1,0 +1,26 @@
+{
+  "name": "angular-flatlander",
+  "version": "0.1.0",
+  "main": [
+    "js/flatlander.js"
+  ],
+  "authors": [
+    "Dawid Grzegorz Węckowski <weceq@tlen.pl>"
+  ],
+  "description": "Flatlander - angular.js tutorial",
+  "keywords": [
+    "angular"
+  ],
+  "license": "GPL",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.4.4",
+    "bootstrap": "~3.3.5"
+  }
+}
