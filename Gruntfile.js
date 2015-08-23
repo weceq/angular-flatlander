@@ -15,6 +15,14 @@ module.exports = function(grunt) {
                     'jquery/jquery.js': 'jquery/dist/jquery.js',
                     'angular/angular.js': 'angular/angular.js'
                 }
+            },
+            stylesheets: {
+                options: {
+                    destPrefix: 'css/vendor'
+                },
+                files: {
+                    'bootstrap/bootstrap.css': 'bootstrap/dist/css/bootstrap.css',
+                }
             }
         },
     });
