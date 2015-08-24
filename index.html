@@ -1,16 +1,19 @@
 <!DOCTYPE html>
-<html ng-app="store">
+<html data-ng-app="store">
     <head>
         <link rel="stylesheet" type="text/css" href="css/vendor/bootstrap/bootstrap.css" />
     </head>
-    <body>
+    <body data-ng-controller="StoreController as store">
         <script type="text/javascript" src="js/vendor/angular/angular.js"></script>
         <script type="text/javascript" src="js/flatlander.js"></script>
         <h1>{{"Hello," + " Angular!"}}</h1>
-        <div ng-controller="StoreController as store">
-            <h1>{{store.product.name}}</h1>
-            <h2>{{store.product.price}}</h2>
-            <p>${{store.product.description}}</p>
+        <div data-ng-repeat="product in store.products">
+        <div data-ng-hide="store.product.soldOut">
+            <h1>{{product.name}}</h1>
+            <h2>${{product.price}}</h2>
+            <p>{{product.description}}</p>
+            <button data-ng-show="product.canPurchase">Add to Cart</button>
+        </div>
         </div>
     </body>
 </html>
