@@ -20,6 +20,13 @@
             this.current = current;
         };
     });
+    app.controller('ReviewController', function(){
+        this.review = {};
+        this.addReview = function(product){
+            product.reviews.push(this.review);
+            this.review = {}
+        };
+    });
     var gems = [
     {
         name: 'Dodecahedron',
@@ -39,6 +46,22 @@
         {
             full: "img/gem-3-full.png",
             thumb: "img/gem-3-thumb.png"
+        }],
+        reviews: [
+        {
+            stars: 4,
+            body: "first comment",
+            author: "annonymous"
+        },
+        {
+            stars: 2,
+            body: "second comment",
+            author: "annonymous2"
+        },
+        {
+            stars: 5,
+            body: "third comment",
+            author: "annonymous3"
         }]
     },
     {
@@ -59,6 +82,22 @@
         {
             full: "img/gem-3-full.png",
             thumb: "img/gem-3-thumb.png"
+        }],
+        reviews: [
+        {
+            stars: 4,
+            body: "first comment",
+            author: "annonymous"
+        },
+        {
+            stars: 2,
+            body: "second comment",
+            author: "annonymous2"
+        },
+        {
+            stars: 5,
+            body: "third comment",
+            author: "annonymous3"
         }]
     },
     {
@@ -79,6 +118,22 @@
         {
             full: "img/gem-3-full.png",
             thumb: "img/gem-3-thumb.png"
+        }],
+        reviews: [
+        {
+            stars: 4,
+            body: "first comment",
+            author: "annonymous"
+        },
+        {
+            stars: 2,
+            body: "second comment",
+            author: "annonymous2"
+        },
+        {
+            stars: 5,
+            body: "third comment",
+            author: "annonymous3"
         }]
     }];
 })();
