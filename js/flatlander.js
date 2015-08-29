@@ -3,16 +3,6 @@
     app.controller('StoreController', function(){
         this.products = gems;
     });
-    app.controller('PanelController', function(){
-        this.tab = 1;
-
-        this.setTab = function(tab) {
-            this.tab = tab;
-        };
-        this.isSelected = function(tab) {
-            return this.tab === tab;
-        };
-    });
     app.controller('GalleryController', function(){
         this.current = 0;
 
@@ -26,6 +16,29 @@
             this.review.createdOn = Date.now();
             product.reviews.push(this.review);
             this.review = {}
+        };
+    });
+    app.directive("productDescription", function() {
+        return {
+            restrict: 'A',
+            templateUrl: "product-description.html"
+        };
+    });
+    app.directive("productPanels", function() {
+        return {
+            restrict: 'E',
+            templateUrl: "product-panels.html",
+            controller: function(){
+                this.tab = 1;
+
+                this.setTab = function(tab) {
+                    this.tab = tab;
+                };
+                this.isSelected = function(tab) {
+                    return this.tab === tab;
+                };
+            },
+            controllerAs: "panel"
         };
     });
     var gems = [
