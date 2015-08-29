@@ -1,0 +1,54 @@
+<section>
+    <ul class="nav nav-pills">
+        <li data-ng-class="{ active:panel.isSelected(1) }">
+            <a href="" data-ng-click="panel.setTab(1)">Description</a>
+        </li>
+        <li data-ng-class="{ active:panel.isSelected(2) }">
+            <a href="" data-ng-click="panel.setTab(2)">Specifications</a>
+        </li>
+        <li data-ng-class="{ active:panel.isSelected(3) }">
+            <a href="" data-ng-click="panel.setTab(3)">Reviews</a>
+        </li>
+    </ul>
+    <div class="panel" data-ng-show="panel.isSelected(1)" data-product-description>
+    </div>
+    <div class="panel" data-ng-show="panel.isSelected(2)">
+        <h4>Specifications</h4>
+        <blockquote>None yet</blockquote>
+    </div>
+    <div class="panel" data-ng-show="panel.isSelected(3)">
+        <h4>Reviews</h4>
+        <blockquote data-ng-repeat="review in product.reviews">
+            <b>Stars: {{review.stars}}</b>
+            {{review.body}}
+            <footer>by <cite>{{review.author}}</cite> on {{review.createdOn | date}}</footer>
+        </blockquote>
+        <form name="reviewForm" data-ng-controller="ReviewController as reviewCtrl"
+                                data-ng-submit="reviewForm.$valid && reviewCtrl.addReview(product)" novalidate>
+            <blockquote>
+                <b>Stars: {{reviewCtrl.review.stars}}</b>
+                {{reviewCtrl.review.body}}
+                <footer>by <cite>{{reviewCtrl.review.author}}</cite></footer>
+            </blockquote>
+            <h4>Submit a Review</h4>
+            <fieldset class="form-group">
+                <select data-ng-model="reviewCtrl.review.stars" class="form-control"
+                                                                data-ng-options="stars for stars in [5,4,3,2,1]"  title="Stars" required>
+                    <option value="">Rate the Product</option>
+                </select>
+            </fieldset>
+            <fieldset class="form-group">
+                <textarea data-ng-model="reviewCtrl.review.body" class="form-control"
+                                                                 placeholder="Write a short review of the product..." title="Review" required>
+                </textarea>
+            </fieldset>
+            <fieldset class="form-group">
+                <input data-ng-model="reviewCtrl.review.author" type="email" class="form-control"
+                                                                             placeholder="jimmyDean@example.org" title="Email" required />
+            </fieldset>
+            <fieldset class="form-group">
+                <input type="submit" class="btn btn-primary pull-right" value="Submit Review" />
+            </fieldset>
+        </form>
+    </div>
+</section>
